@@ -1,23 +1,42 @@
 function addOutput(num) {
-    var display = document.getElementById("display");
+  var display = document.getElementById("display");
+  if (display.value == "") {
+    switch (num) {
+      case "%":
+        break;
+      case "/":
+        break;
+      case "*":
+        break;
+      case "+":
+        break;
+      case "-":
+        break;
+      case ".":
+        break;
+      default:
+        display.value = display.value + num;
+    }
+  }else{
     display.value = display.value + num;
   }
-   
-  function calculate() {
-    var display = document.getElementById("display");
-    var result = eval(display.value);
-    var displayResult = document.getElementById("result");
-    displayResult.value = result;
-  }
-   
-  function reset() {
-    var display = document.getElementById("display");
-    display.value = "";
-    var displayResult = document.getElementById("result");
-    displayResult.value = "";
-  }
-   
-  function del() {
-    var display = documnet.getElementById("display");
-    display.value = display.value.substring(0, display.value.length - 1);
-  }
+}
+
+function calculate() {
+  var display = document.getElementById("display");
+  var result = eval(display.value);
+  var displayResult = document.getElementById("result");
+  displayResult.value = result;
+}
+
+function reset() {
+  var display = document.getElementById("display");
+  display.value = "";
+  var displayResult = document.getElementById("result");
+  displayResult.value = "";
+}
+
+function del() {
+  var display = documnet.getElementById("display");
+  display.value = display.value.substring(0, display.value.length - 1);
+}
